@@ -34,9 +34,14 @@ This updates your MNE BIDS Pipeline to the latest version.
 ### Run the MNE BIDS Pipeline
 
 ```shell
-mne-pipeline run
+mne-bids-pipeline run
 ```
 
 This runs the MNE BIDS Pipeline. Please note that additional command line
 arguments need to be passed, otherwise you will only get usage instructions.
 
+Working example:
+
+```shell
+mne-bids-pipeline run --config=./my_custom_config.py
+```
