@@ -1,14 +1,32 @@
 from typing import Literal, Optional, Union
 from pathlib import Path
 from fire import Fire
+import questionary
 
 from . import download_pipeline, update_pipeline, run_pipeline
 
 def cli(
-    command: Literal['download', 'update', 'run'],
+    command: Optional[Literal['download', 'update', 'run']] = None,
     project_dir: Optional[Union[Path, str]] = None,
     config: Optional[Union[Path, str]] = None
 ) -> None:
+    if command is None:
+        command = questionary.select(
+            message='What would you like to do?',
+            choices=['download', 'update', 'run']).ask()
+
+    if project_dir is None:
+        project_dir = questionary.path(
+            message='Path of your analysis project',
+            default='.'
+        ).ask()
+
+    if command != 'download' and config is None:
+        config = questionary.path(
+            message='Path of the config file',
+            default=str(project_dir)
+        ).ask()
+
     if config is not None:
         config = Path(config)
 
