@@ -16,3 +16,5 @@ def update_pipeline(
 
     command = f'git -C {pipeline_dir} pull --rebase --autostash origin main'
     subprocess.run(command.split(' '))
+
+    print('\n✅ Successfully updated the MNE BIDS Pipeline!\n')
