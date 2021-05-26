@@ -15,10 +15,22 @@ pip install -e .
 
 ## Usage
 
-### Download the MNE BIDS Pipeline
+The easiest way to get started is by simply running
 
 ```shell
-mne-bids-pipeline download
+mne-bids-pipeline
+```
+
+in the terminal. An interactive menu will appear, allowing you to access all
+functionality.
+
+You may also skip some of the menu selection process by passing certain
+command line arguments, as demonstrated below.
+
+### Install the MNE BIDS Pipeline
+
+```shell
+mne-bids-pipeline install
 ```
 
 This downloads the latest version of the pipeline.
