@@ -2,10 +2,10 @@ from typing import Optional
 from pathlib import Path
 import subprocess
 
-from .config import GIT_REPO_URI
+from .constants import GIT_REPO_URI
 
 
-def download_pipeline(
+def install_pipeline(
     parent_dir: Optional[Path] = None
 ) -> None:
     if parent_dir is None:
@@ -18,5 +18,9 @@ def download_pipeline(
                               f'consider updating an existing MNE BIDS '
                               f'Pipeline via "mne-bids-pipeline update"')
 
-    command = f'git clone {GIT_REPO_URI} {target_dir}'
+    command = (f'git clone --single-branch --branch=main '
+               f'{GIT_REPO_URI} {target_dir}')
     subprocess.run(command.split(' '))
+    print('\n🚀 Successfully installed the MNE BIDS Pipeline!\n\n'
+          'Next, run "mne-bids-pipeline" again to create a basic '
+          'configuration.\n')
