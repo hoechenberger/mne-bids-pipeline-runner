@@ -21,8 +21,9 @@ The easiest way to get started is by simply running
 mne-bids-pipeline
 ```
 
-in the terminal. An interactive menu will appear, allowing you to access all
-functionality.
+from your project directory (i.e. the one that contains e.g. your analysis code
+and / or data) in the terminal. An interactive menu will appear, allowing you
+to access all functionality.
 
 You may also skip some of the menu selection process by passing certain
 command line arguments, as demonstrated below.
