@@ -1,5 +1,7 @@
 # A runner for the MNE BIDS Pipeline
 
+⚠️ This functionality has now moved into the MNE-BIDS-Pipeline itself. This project & repository will be archived. ⚠️
+
 ## Features
 
 - Download the latest MNE BIDS Pipeline
